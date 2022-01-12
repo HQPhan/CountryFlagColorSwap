@@ -19,8 +19,8 @@ let usa = Countries.push(new Country("USA", "English", "Hello World", ["red","bl
 let egypt = Countries.push(new Country("Egypt", "Arabic", "Marhaban Bialealam", ["red","black","white"], "EgyptFlag.png"));
 let france = Countries.push(new Country("France", "French", "Bonjour Le Monde", ["blue","red","white"], "FranceFlag.png"));
 let italy = Countries.push(new Country("Italy", "Italian", "Ciao Mondo", ["green","red","white"], "ItalyFlag.png"));
-let germany = Countries.push(new Country("Germany", "German", "Hallo Welt", ["black","red","yellow"], "GermanyFlag.png"));
-let india = Countries.push(new Country("India", "Hindi", "Namaste Duniya", ["red","black","white"], "IndiaFlag.png"));
+let germany = Countries.push(new Country("Germany", "German", "Hallo Welt", ["black","yellow","red"], "GermanyFlag.png"));
+let india = Countries.push(new Country("India", "Hindi", "Namaste Duniya", ["orange","green","white"], "IndiaFlag.png"));
 
 console.log(Countries);
 

@@ -13,8 +13,8 @@ var usa = Countries.push(new Country("USA", "English", "Hello World", ["red", "b
 var egypt = Countries.push(new Country("Egypt", "Arabic", "Marhaban Bialealam", ["red", "black", "white"], "EgyptFlag.png"));
 var france = Countries.push(new Country("France", "French", "Bonjour Le Monde", ["blue", "red", "white"], "FranceFlag.png"));
 var italy = Countries.push(new Country("Italy", "Italian", "Ciao Mondo", ["green", "red", "white"], "ItalyFlag.png"));
-var germany = Countries.push(new Country("Germany", "German", "Hallo Welt", ["black", "red", "yellow"], "GermanyFlag.png"));
-var india = Countries.push(new Country("India", "Hindi", "Namaste Duniya", ["red", "black", "white"], "IndiaFlag.png"));
+var germany = Countries.push(new Country("Germany", "German", "Hallo Welt", ["black", "yellow", "red"], "GermanyFlag.png"));
+var india = Countries.push(new Country("India", "Hindi", "Namaste Duniya", ["orange", "green", "white"], "IndiaFlag.png"));
 console.log(Countries);
 function SwitchCountry() {
     var country = Countries[0];
