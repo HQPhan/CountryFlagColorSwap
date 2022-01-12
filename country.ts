@@ -3,22 +3,24 @@ class Country{
   lang:string;
   greeting:string;
   colors:string[];
+  url:string;
 
-  constructor(countryname:string, lang:string, greeting:string, colors:string[]){
+  constructor(countryname:string, lang:string, greeting:string, colors:string[], url:string){
       this.countryname = countryname;
       this.lang = lang;
       this.greeting = greeting;
       this.colors = colors;
+      this.url = url;
   }
 }
 
 let Countries:Country[] = [];
-let usa = Countries.push(new Country("USA", "English", "Hello World", ["red","blue","white"]));
-let egypt = Countries.push(new Country("Egypt", "Arabic", "Marhaban Bialealam", ["red","black","white"]));
-let france = Countries.push(new Country("France", "French", "Bonjour Le Monde", ["blue","red","white"]));
-let italy = Countries.push(new Country("Italy", "Italian", "Ciao Mondo", ["green","red","white"]));
-let germany = Countries.push(new Country("Germany", "German", "Hallo Welt", ["black","red","yellow"]));
-let india = Countries.push(new Country("India", "Hindi", "Namaste Duniya", ["red","black","white"]));
+let usa = Countries.push(new Country("USA", "English", "Hello World", ["red","blue","white"],"USAFlag.png"));
+let egypt = Countries.push(new Country("Egypt", "Arabic", "Marhaban Bialealam", ["red","black","white"], "EgyptFlag.png"));
+let france = Countries.push(new Country("France", "French", "Bonjour Le Monde", ["blue","red","white"], "FranceFlag.png"));
+let italy = Countries.push(new Country("Italy", "Italian", "Ciao Mondo", ["green","red","white"], "ItalyFlag.png"));
+let germany = Countries.push(new Country("Germany", "German", "Hallo Welt", ["black","red","yellow"], "GermanyFlag.png"));
+let india = Countries.push(new Country("India", "Hindi", "Namaste Duniya", ["red","black","white"], "IndiaFlag.png"));
 
 console.log(Countries);
 
@@ -29,6 +31,7 @@ function SwitchCountry(){
   let output1:string = `Country: ${country.countryname}`;
   let output2:string = `Language: ${country.lang}`;
   let output3:string = `Greeting: ${country.greeting}`;
+  let output4:string = "USAFlag.png";
 
   for(let i=0;i<Countries.length;i++){
     country = Countries[i];
@@ -36,6 +39,7 @@ function SwitchCountry(){
       output1 = `Country: ${country.countryname}`;
       output2 = `Language: ${country.lang}`;
       output3 = `Greeting: ${country.greeting}`;
+      output4 = country.url;
       ChangeBackgroundColor1(country.colors[0]);
       ChangeBackgroundColor2(country.colors[1]);
       ChangeBackgroundColor3(country.colors[2]);
@@ -46,6 +50,8 @@ function SwitchCountry(){
   document.getElementById("CountryName").innerText = output1;
   document.getElementById("OfficialLanguage").innerText = output2;
   document.getElementById("HelloWorld").innerText = output3;
+  document.getElementById("Image").src = output4;
+
 }
 
 function ChangeBackgroundColor1(color:string){
