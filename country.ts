@@ -26,42 +26,20 @@ console.log(Countries);
 
 function SwitchCountry(){
 
-  let country:Country = Countries[0];
   let input:string = document.getElementById("CountryList").value;
-  let output1:string = `Country: ${country.countryname}`;
-  let output2:string = `Language: ${country.lang}`;
-  let output3:string = `Greeting: ${country.greeting}`;
-  let output4:string = "USAFlag.png";
 
   for(let i=0;i<Countries.length;i++){
-    country = Countries[i];
-    if (input === country.countryname) {
-      output1 = `Country: ${country.countryname}`;
-      output2 = `Language: ${country.lang}`;
-      output3 = `Greeting: ${country.greeting}`;
-      output4 = country.url;
-      ChangeBackgroundColor1(country.colors[0]);
-      ChangeBackgroundColor2(country.colors[1]);
-      ChangeBackgroundColor3(country.colors[2]);
+    //country = Countries[i];
+    
+    if (input === Countries[i].countryname) {
+      document.getElementById("CountryName").innerText = Countries[i].countryname;
+      document.getElementById("OfficialLanguage").innerText = Countries[i].lang;
+      document.getElementById("HelloWorld").innerText = Countries[i].greeting;
+      document.getElementById("Image").src = Countries[i].url;
+      document.getElementById("Color1").style.backgroundColor = Countries[i].colors[0];
+      document.getElementById("Color2").style.backgroundColor = Countries[i].colors[1];
+      document.getElementById("Color3").style.backgroundColor = Countries[i].colors[2];
       break;
     }
   }
-  
-  document.getElementById("CountryName").innerText = output1;
-  document.getElementById("OfficialLanguage").innerText = output2;
-  document.getElementById("HelloWorld").innerText = output3;
-  document.getElementById("Image").src = output4;
-
-}
-
-function ChangeBackgroundColor1(color:string){
-  document.getElementById("Color1").style.backgroundColor = color;
-}
-
-function ChangeBackgroundColor2(color:string){
-document.getElementById("Color2").style.backgroundColor = color;
-}
-
-function ChangeBackgroundColor3(color:string){
-document.getElementById("Color3").style.backgroundColor = color;
 }

@@ -17,36 +17,18 @@ var germany = Countries.push(new Country("Germany", "German", "Hallo Welt", ["bl
 var india = Countries.push(new Country("India", "Hindi", "Namaste Duniya", ["orange", "green", "white"], "IndiaFlag.png"));
 console.log(Countries);
 function SwitchCountry() {
-    var country = Countries[0];
     var input = document.getElementById("CountryList").value;
-    var output1 = "Country: ".concat(country.countryname);
-    var output2 = "Language: ".concat(country.lang);
-    var output3 = "Greeting: ".concat(country.greeting);
-    var output4 = "USAFlag.png";
     for (var i = 0; i < Countries.length; i++) {
-        country = Countries[i];
-        if (input === country.countryname) {
-            output1 = "Country: ".concat(country.countryname);
-            output2 = "Language: ".concat(country.lang);
-            output3 = "Greeting: ".concat(country.greeting);
-            output4 = country.url;
-            ChangeBackgroundColor1(country.colors[0]);
-            ChangeBackgroundColor2(country.colors[1]);
-            ChangeBackgroundColor3(country.colors[2]);
+        //country = Countries[i];
+        if (input === Countries[i].countryname) {
+            document.getElementById("CountryName").innerText = Countries[i].countryname;
+            document.getElementById("OfficialLanguage").innerText = Countries[i].lang;
+            document.getElementById("HelloWorld").innerText = Countries[i].greeting;
+            document.getElementById("Image").src = Countries[i].url;
+            document.getElementById("Color1").style.backgroundColor = Countries[i].colors[0];
+            document.getElementById("Color2").style.backgroundColor = Countries[i].colors[1];
+            document.getElementById("Color3").style.backgroundColor = Countries[i].colors[2];
             break;
         }
     }
-    document.getElementById("CountryName").innerText = output1;
-    document.getElementById("OfficialLanguage").innerText = output2;
-    document.getElementById("HelloWorld").innerText = output3;
-    document.getElementById("Image").src = output4;
-}
-function ChangeBackgroundColor1(color) {
-    document.getElementById("Color1").style.backgroundColor = color;
-}
-function ChangeBackgroundColor2(color) {
-    document.getElementById("Color2").style.backgroundColor = color;
-}
-function ChangeBackgroundColor3(color) {
-    document.getElementById("Color3").style.backgroundColor = color;
 }
